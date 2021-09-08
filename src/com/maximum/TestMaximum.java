@@ -5,16 +5,6 @@ public class TestMaximum<T extends Comparable<T>> {
 	private T secondNumber;
 	private T thirdNumber;
 
-	private T floatNumber1;
-	private T floatNumber2;
-	private T floatNumber3;
-	
-	private T firstWord;
-	private T secondWord;
-	private T thirdWord;
-	
-	
-
 	public TestMaximum(T firstNumber, T secondNumber, T thirdNumber) {
 		this.firstNumber = firstNumber;
 		this.secondNumber = secondNumber;
@@ -45,58 +35,8 @@ public class TestMaximum<T extends Comparable<T>> {
 		this.thirdNumber = thirdNumber;
 	}
 
-	public T getFloatNumber1() {
-		return floatNumber1;
-	}
-
-	public void setFloatNumber1(T floatNumber1) {
-		this.floatNumber1 = floatNumber1;
-	}
-
-	public T getFloatNumber2() {
-		return floatNumber2;
-	}
-
-	public void setFloatNumber2(T floatNumber2) {
-		this.floatNumber2 = floatNumber2;
-	}
-
-	public T getFloatNumber3() {
-		return floatNumber3;
-	}
-
-	public void setFloatNumber3(T floatNumber3) {
-		this.floatNumber3 = floatNumber3;
-	}
-	
-	
-
-	public T getFirstWord() {
-		return firstWord;
-	}
-
-	public void setFirstWord(T firstWord) {
-		this.firstWord = firstWord;
-	}
-
-	public T getSecondWord() {
-		return secondWord;
-	}
-
-	public void setSecondWord(T secondWord) {
-		this.secondWord = secondWord;
-	}
-
-	public T getThirdWord() {
-		return thirdWord;
-	}
-
-	public void setThirdWord(T thirdWord) {
-		this.thirdWord = thirdWord;
-	}
-
 	/*
-	 * method to find maximum of 3 integers
+	 * generic method to find maximum of 3 integers or floats or strings
 	 */
 	public void findMaximum(T firstNumber, T secondNumber, T thirdNumber) {
 		if (firstNumber.compareTo(secondNumber) > 0 && firstNumber.compareTo(thirdNumber) > 0)
