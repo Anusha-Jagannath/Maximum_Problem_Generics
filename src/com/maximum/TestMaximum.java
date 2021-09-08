@@ -12,15 +12,15 @@ public class TestMaximum<T extends Comparable<T>> {
 		this.secondNumber = secondNumber;
 		this.thirdNumber = thirdNumber;
 	}
-	
-	public TestMaximum(T firstNumber, T secondNumber, T thirdNumber,T fourthNumber) {
+
+	public TestMaximum(T firstNumber, T secondNumber, T thirdNumber, T fourthNumber) {
 		this.firstNumber = firstNumber;
 		this.secondNumber = secondNumber;
 		this.thirdNumber = thirdNumber;
 		this.fourthNumber = fourthNumber;
 	}
-    
-	public TestMaximum(T firstNumber, T secondNumber, T thirdNumber,T fourthNumber,T fifthNumber) {
+
+	public TestMaximum(T firstNumber, T secondNumber, T thirdNumber, T fourthNumber, T fifthNumber) {
 		this.firstNumber = firstNumber;
 		this.secondNumber = secondNumber;
 		this.thirdNumber = thirdNumber;
@@ -51,7 +51,6 @@ public class TestMaximum<T extends Comparable<T>> {
 	public void setThirdNumber(T thirdNumber) {
 		this.thirdNumber = thirdNumber;
 	}
-	
 
 	public T getFourthNumber() {
 		return fourthNumber;
@@ -60,8 +59,6 @@ public class TestMaximum<T extends Comparable<T>> {
 	public void setFourthNumber(T fourthNumber) {
 		this.fourthNumber = fourthNumber;
 	}
-	
-	
 
 	public T getFifthNumber() {
 		return fifthNumber;
@@ -74,49 +71,74 @@ public class TestMaximum<T extends Comparable<T>> {
 	/*
 	 * generic method to find maximum of 3 integers or floats or strings
 	 */
-	public void findMaximum(T firstNumber, T secondNumber, T thirdNumber) {
+	public <T extends Comparable<T>> void findMaximum(T firstNumber, T secondNumber, T thirdNumber) {
+		T max;
 		if (firstNumber.compareTo(secondNumber) > 0 && firstNumber.compareTo(thirdNumber) > 0)
-			System.out.println("Maximum: " + firstNumber);
+			max = firstNumber;
+
 		else if (secondNumber.compareTo(firstNumber) > 0 && secondNumber.compareTo(thirdNumber) > 0)
-			System.out.println("Maximum: " + secondNumber);
+			max = secondNumber;
 		else
-			System.out.println("Maximum: " + thirdNumber);
+			max = thirdNumber;
+		printMax(firstNumber, secondNumber, thirdNumber, max);
 	}
-	
+
 	/*
 	 * generic method to find maximum of 4 integers or floats or strings
 	 */
-	public void findMaximum(T firstNumber, T secondNumber, T thirdNumber,T fourthNumber) {
+	public <T extends Comparable<T>> void findMaximum(T firstNumber, T secondNumber, T thirdNumber, T fourthNumber) {
+		T max;
 		if (firstNumber.compareTo(secondNumber) > 0 && firstNumber.compareTo(thirdNumber) > 0
 				&& firstNumber.compareTo(fourthNumber) > 0)
-			System.out.println("Maximum: " + firstNumber);
-		else if (secondNumber.compareTo(firstNumber) > 0 && secondNumber.compareTo(thirdNumber) > 0 &&
-				secondNumber.compareTo(fourthNumber) > 0)
-			System.out.println("Maximum: " + secondNumber);
-		else if(thirdNumber.compareTo(firstNumber) > 0 && thirdNumber.compareTo(secondNumber) > 0 && 
-				thirdNumber.compareTo(fourthNumber) > 0)
-			System.out.println("Maximum: "+thirdNumber);
+			max = firstNumber;
+		else if (secondNumber.compareTo(firstNumber) > 0 && secondNumber.compareTo(thirdNumber) > 0
+				&& secondNumber.compareTo(fourthNumber) > 0)
+			max = secondNumber;
+		else if (thirdNumber.compareTo(firstNumber) > 0 && thirdNumber.compareTo(secondNumber) > 0
+				&& thirdNumber.compareTo(fourthNumber) > 0)
+			max = thirdNumber;
 		else
-			System.out.println("Maximum: " + fourthNumber);
+			max = fourthNumber;
+		printMax(firstNumber, secondNumber, thirdNumber, fourthNumber, max);
+
 	}
-	
+
 	/*
 	 * generic method to find maximum of 5 integers or floats or strings
 	 */
-	public void findMaximum(T firstNumber, T secondNumber, T thirdNumber,T fourthNumber, T fifthNumber) {
+	public <T extends Comparable<T>> void findMaximum(T firstNumber, T secondNumber, T thirdNumber, T fourthNumber,
+			T fifthNumber) {
+		T max;
 		if (firstNumber.compareTo(secondNumber) > 0 && firstNumber.compareTo(thirdNumber) > 0
-				&& firstNumber.compareTo(fourthNumber) > 0 && firstNumber.compareTo(fifthNumber)> 0)
-			System.out.println("Maximum: " + firstNumber);
-		else if (secondNumber.compareTo(firstNumber) > 0 && secondNumber.compareTo(thirdNumber) > 0 &&
-				secondNumber.compareTo(fourthNumber) > 0 && secondNumber.compareTo(fifthNumber) > 0)
-			System.out.println("Maximum: " + secondNumber);
-		else if(thirdNumber.compareTo(firstNumber) >0 && thirdNumber.compareTo(secondNumber)>0 && 
-				thirdNumber.compareTo(fourthNumber)>0 && thirdNumber.compareTo(fifthNumber) >0)
-			System.out.println("Maximum: "+thirdNumber);
-		else if(fourthNumber.compareTo(firstNumber) > 0 && fourthNumber.compareTo(secondNumber) >0 &&
-				fourthNumber.compareTo(thirdNumber) >0 && fourthNumber.compareTo(fifthNumber) >0)
-			System.out.println("Maximum: "+fourthNumber);
+				&& firstNumber.compareTo(fourthNumber) > 0 && firstNumber.compareTo(fifthNumber) > 0)
+			max = firstNumber;
+		else if (secondNumber.compareTo(firstNumber) > 0 && secondNumber.compareTo(thirdNumber) > 0
+				&& secondNumber.compareTo(fourthNumber) > 0 && secondNumber.compareTo(fifthNumber) > 0)
+			max = secondNumber;
+		else if (thirdNumber.compareTo(firstNumber) > 0 && thirdNumber.compareTo(secondNumber) > 0
+				&& thirdNumber.compareTo(fourthNumber) > 0 && thirdNumber.compareTo(fifthNumber) > 0)
+			max = thirdNumber;
+		else if (fourthNumber.compareTo(firstNumber) > 0 && fourthNumber.compareTo(secondNumber) > 0
+				&& fourthNumber.compareTo(thirdNumber) > 0 && fourthNumber.compareTo(fifthNumber) > 0)
+			max = fourthNumber;
 		else
-			System.out.println("Maximum: " + fifthNumber);
+			max = fifthNumber;
+		printMax(firstNumber, secondNumber, thirdNumber, fourthNumber, fifthNumber, max);
 	}
+
+	// Method to print the maximum Value for 3 parameters.
+	public static <T> void printMax(T first, T second, T third, T max) {
+		System.out.printf("Maximum of %s, %s and %s is %s\n", first, second, third, max);
+	}
+
+	// Method to print the maximum Value for 4 parameters.
+	public static <T> void printMax(T first, T second, T third, T fourth, T max) {
+		System.out.printf("Maximum of %s, %s ,%s, %s is %s\n", first, second, third, fourth, max);
+	}
+
+	// Method to print the maximum Value for 5 parameters.
+	public static <T> void printMax(T first, T second, T third, T fourth, T fifth, T max) {
+		System.out.printf("Maximum of %s, %s, %s, %s and %s is %s\n", first, second, third, fourth, fifth, max);
+	}
+
 }
