@@ -9,6 +9,9 @@ public class Main {
 		
 		TestMaximum testmaximum2 = new TestMaximum(3.8f,1.7f,2.8f);
 		testmaximum2.findMaxOfFloat();
+		
+		TestMaximum testmaximum3 = new TestMaximum("Apple","Peach","Banana");
+		testmaximum3.findMaxOfString();
 	}
 
 }
