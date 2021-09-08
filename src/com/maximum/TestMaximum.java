@@ -8,10 +8,12 @@ public class TestMaximum {
 	private Float floatNumber1;
 	private Float floatNumber2;
 	private Float floatNumber3;
-
+	
 	private String firstWord;
 	private String secondWord;
 	private String thirdWord;
+	
+	
 
 	public TestMaximum(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
 		this.firstNumber = firstNumber;
@@ -25,6 +27,8 @@ public class TestMaximum {
 		this.floatNumber2 = floatNumber2;
 		this.floatNumber3 = floatNumber3;
 	}
+	
+	
 
 	public TestMaximum(String firstWord, String secondWord, String thirdWord) {
 		super();
@@ -80,6 +84,8 @@ public class TestMaximum {
 	public void setFloatNumber3(Float floatNumber3) {
 		this.floatNumber3 = floatNumber3;
 	}
+	
+	
 
 	public String getFirstWord() {
 		return firstWord;
@@ -128,10 +134,10 @@ public class TestMaximum {
 		else
 			System.out.println("Maximum: " + floatNumber3);
 	}
-	/*
-	 * method to find maximum of 3 words
-	 */
 	
+	/*
+	 * method to find maximum of 3 float
+	 */
 	public void findMaxOfString() {
 		if (firstWord.compareTo(secondWord) > 0 && firstWord.compareTo(thirdWord) > 0)
 			System.out.println("Maximum: " + firstWord);
@@ -140,5 +146,5 @@ public class TestMaximum {
 		else
 			System.out.println("Maximum: " + thirdWord);
 	}
-	
+
 }
